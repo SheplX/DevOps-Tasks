@@ -1,1 +1,1 @@
-# DevOps-Challanges
+# DevOps-Challenge
