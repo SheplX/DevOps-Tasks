@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: juice
+  labels:
+    app: juice-shop
+    name: juice
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: juice-shop
+      name: juice
+  template:
+    metadata:
+      name: juice
+      labels:
+        app: juice-shop
+        name: juice
+    spec:
+      containers:
+      - name: juice
+        image: bkimminich/juice-shop
+        ports:
+          - containerPort: 3000
