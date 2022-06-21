@@ -5,7 +5,7 @@ echo "|   -Determine one by one if the ID number of the user (last column) is od
 echo "+--------------------------------------------------------------------------------------------------------------+"
 
 input="test.txt"
-while read -r _ _ rec_column3                              # checks column3
+while read -r _ _ rec_column3                              # check column3
 d
   if [[ -z "$rec_column3" ]]; then                         # if column3 is null, return invalid
     echo "This ID not found"; 
@@ -26,7 +26,7 @@ echo "+-------------------------------------------------------------------------
 
 input="test.txt" 
 regex='.com'                                                                            # regular expression menu
-while read -r rec_column1 rec_column2 rec_column3                                       # checks column1 & column2 & column3
+while read -r rec_column1 rec_column2 rec_column3                                       # check column1 & column2 & column3
 do
     if [[ -z $rec_column3 ]]                                                            # if column3 is empty, check next line
     then
