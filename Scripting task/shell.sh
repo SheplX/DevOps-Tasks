@@ -5,13 +5,13 @@ echo "|   -Determine one by one if the ID number of the user (last column) is od
 echo "+--------------------------------------------------------------------------------------------------------------+"
 
 input="test.txt"
-while read -r _ _ rec_column3                              # checks record 3
-do
-  if [[ -z "$rec_column3" ]]; then                         # if record 3 is null, return invalid
+while read -r _ _ rec_column3                              # checks column3
+d
+  if [[ -z "$rec_column3" ]]; then                         # if column3 is null, return invalid
     echo "This ID not found"; 
-  elif ! [[ $rec_column3 =~ ^[0-9]+$ ]] ; then             # if record 3 is not a number, return not a number
+  elif ! [[ $rec_column3 =~ ^[0-9]+$ ]] ; then             # if column3 is not a number, return not a number
     echo "This ID : '$rec_column3' is not a number";
-  elif [[ $((rec_column3 % 2)) -eq 0 ]]; then              # if record 3 can divided by 2 & = 0, return its even
+  elif [[ $((rec_column3 % 2)) -eq 0 ]]; then              # if column3 can divided by 2 & = 0, return its even
     echo "This ID : '$rec_column3' is EVEN";
   else 
     echo "This ID : '$rec_column3' is ODD"                 # else, return odd
@@ -26,15 +26,15 @@ echo "+-------------------------------------------------------------------------
 
 input="test.txt" 
 regex='.com'                                                                            # regular expression menu
-while read -r rec_column1 rec_column2 rec_column3                                       # checks record 2 record 3
+while read -r rec_column1 rec_column2 rec_column3                                       # checks column1 & column2 & column3
 do
-    if [[ -z $rec_column3 ]]                                                            # if record 3 is empty, check next line
+    if [[ -z $rec_column3 ]]                                                            # if column3 is empty, check next line
     then
         continue
     fi
-    if [[ $rec_column2 =~ $regex ]]                                                     # if record 2 have anything from regex ".com" enter to the next condition
+    if [[ $rec_column2 =~ $regex ]]                                                     # if column2 have anything from regex ".com" enter to the next condition
     then
-      if [[ $((rec_column3 % 2)) -eq 0 ]]                                               # if record 3 can divided by 2 & = 0, return its even
+      if [[ $((rec_column3 % 2)) -eq 0 ]]                                               # if column3 can divided by 2 & = 0, return its even
       then
         echo "The email address of user : '$rec_column1' is valid and its ID is EVEN";
       else                                                                              # else, return odd
